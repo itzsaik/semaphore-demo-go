@@ -40,7 +40,7 @@ blocks:
           # Store the binary in cache to reuse in further blocks.
           # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
           - mkdir binsai
-          - mv webServer binsai
+          - mv webServer binsi
           - cache store $(checksum webServer.go) binsai
 
   - name: Check code style
