@@ -39,9 +39,9 @@ blocks:
 
           # Store the binary in cache to reuse in further blocks.
           # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
-          - mkdir bin
-          - mv webServer bin
-          - cache store $(checksum webServer.go) bin
+          - mkdir binsai
+          - mv webServer binsai
+          - cache store $(checksum webServer.go) binsai
 
   - name: Check code style
     task:
@@ -78,6 +78,6 @@ blocks:
         commands:
           # Restore compiled binary which we created in the first block:
           - cache restore $(checksum webServer.go)
-          - ./bin/webServer 8001 &
+          - ./binsai/webServer 8001 &
           - curl --silent localhost:8001/time | grep "The current time is"
 
